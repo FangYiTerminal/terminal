@@ -6,6 +6,8 @@ import 'package:dartssh2/dartssh2.dart';
 import 'src/virtual_keyboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:xterm/xterm.dart';
+import 'bridge/bridge_generated.dart';
+import 'package:flutter_rust_bridge/flutter_rust_bridge.dart';
 
 const host = '127.0.0.1';
 const port = 50001;
@@ -38,16 +40,19 @@ class _MyHomePageState extends State<MyHomePage> {
   late final terminal = Terminal(inputHandler: keyboard);
 
   final keyboard = VirtualKeyboard(defaultInputHandler);
+  late final dylib = loadLibForFlutter('libterminal_ssh.dylib');
+  late final api = TerminalSshImpl(dylib);
 
   var title = host;
 
   @override
   void initState() {
-    super.initState();
+    super.initState();    
     initTerminal();
   }
 
   Future<void> initTerminal() async {
+    
     terminal.write('Connecting...\r\n');
 
     final client = SSHClient(
