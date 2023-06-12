@@ -1,27 +1,26 @@
-name: terminal_flutter
-description: A new Flutter project.
-publish_to: 'none'
-
+name: FangYiShell
 version: 1.0.0+1
-
-environment:
+publish_to: none
+description: A shell tool build with flutter and rust
+environment: 
   sdk: '>=3.0.1 <4.0.0'
 
-dependencies:
-  flutter:
-    sdk: flutter
+dependencies: 
   cupertino_icons: ^1.0.2
   dartssh2: ^2.5.0
   xterm: ^3.2.6
-  get: ^4.6.5
   ffi: '>=2.0.1 <3.0.0'
   flutter_rust_bridge: ^1.51.0
-
-dev_dependencies:
-  flutter_test:
+  get: 4.6.5
+  flutter: 
     sdk: flutter
+
+dev_dependencies: 
   flutter_lints: ^2.0.0
   ffigen: '>=8.0.0 <9.0.0'
+  flutter_test: 
+    sdk: flutter
 
-flutter:
+flutter: 
   uses-material-design: true
+

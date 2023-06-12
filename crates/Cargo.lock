@@ -914,6 +914,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "terminal_ffi"
+version = "0.1.0"
+
+[[package]]
 name = "terminal_ssh"
 version = "0.1.0"
 dependencies = [

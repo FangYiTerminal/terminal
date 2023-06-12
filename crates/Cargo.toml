@@ -1,4 +1,5 @@
 [workspace]
 members =[
-    "terminal_ssh"
+    "terminal_ssh",
+    "terminal_ffi"
 ]
