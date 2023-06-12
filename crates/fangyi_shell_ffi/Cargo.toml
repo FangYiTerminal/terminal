@@ -1,16 +1,20 @@
 [package]
-name = "terminal_ssh"
+name = "fangyi_shell_ffi"
 version = "0.1.0"
 edition = "2021"
 
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
 [lib]
-name = "terminal_ssh"
+name = "fangyi_shell_ffi"
 crate-type = ["cdylib","staticlib"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+fangyi_shell_ssh = {path = "../fangyi_shell_ssh"}
 flutter_rust_bridge = "1.77.1"
 
 [build-dependencies]
 flutter_rust_bridge_codegen = "1.77.1"
+
