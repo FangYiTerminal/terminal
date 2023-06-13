@@ -27,7 +27,7 @@
 		33CC10F32044A3C60003C045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33CC10F22044A3C60003C045 /* Assets.xcassets */; };
 		33CC10F62044A3C60003C045 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CC10F42044A3C60003C045 /* MainMenu.xib */; };
 		33CC11132044BFA00003C045 /* MainFlutterWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CC11122044BFA00003C045 /* MainFlutterWindow.swift */; };
-		FF8F50A02A33100700ED2809 /* terminal_ssh.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8F509D2A330FC400ED2809 /* terminal_ssh.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
+		FF8C83262A37172200B1D7CE /* libfangyi_shell_ffi_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8C83232A3716F100B1D7CE /* libfangyi_shell_ffi_static.a */; };
 		FF8F50A22A33179100ED2809 /* bridge_generated.h in Resources */ = {isa = PBXBuildFile; fileRef = FF8F50A12A33178600ED2809 /* bridge_generated.h */; };
 /* End PBXBuildFile section */
 
@@ -46,19 +46,26 @@
 			remoteGlobalIDString = 33CC111A2044C6BA0003C045;
 			remoteInfo = FLX;
 		};
-		FF8F509C2A330FC400ED2809 /* PBXContainerItemProxy */ = {
+		FF8C83202A3716F100B1D7CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FF8F50982A330FC400ED2809 /* terminal_ssh.xcodeproj */;
+			containerPortal = FF8C831B2A3716F100B1D7CE /* fangyi_shell_ffi.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CA6099C4DF9DC0D785C6B7EC;
-			remoteInfo = "terminal_ssh-cdylib";
+			remoteGlobalIDString = CA6050C35526734541C54E40;
+			remoteInfo = "fangyi_shell_ffi-cdylib";
 		};
-		FF8F509E2A330FF600ED2809 /* PBXContainerItemProxy */ = {
+		FF8C83222A3716F100B1D7CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FF8F50982A330FC400ED2809 /* terminal_ssh.xcodeproj */;
+			containerPortal = FF8C831B2A3716F100B1D7CE /* fangyi_shell_ffi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CA6010B7598374F751C43290;
+			remoteInfo = "fangyi_shell_ffi-staticlib";
+		};
+		FF8C83242A37171400B1D7CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF8C831B2A3716F100B1D7CE /* fangyi_shell_ffi.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = CA6099C4DF9D80B82F24D599;
-			remoteInfo = "terminal_ssh-cdylib";
+			remoteGlobalIDString = CA6010B759833B14D1383977;
+			remoteInfo = "fangyi_shell_ffi-staticlib";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -94,7 +101,7 @@
 		33E5194F232828860026EE4D /* AppInfo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppInfo.xcconfig; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		FF8F50982A330FC400ED2809 /* terminal_ssh.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = terminal_ssh.xcodeproj; path = ../../../crates/terminal_ssh/terminal_ssh.xcodeproj; sourceTree = "<group>"; };
+		FF8C831B2A3716F100B1D7CE /* fangyi_shell_ffi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = fangyi_shell_ffi.xcodeproj; path = ../../crates/fangyi_shell_ffi/fangyi_shell_ffi.xcodeproj; sourceTree = "<group>"; };
 		FF8F50A12A33178600ED2809 /* bridge_generated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bridge_generated.h; path = Runner/bridge_generated.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF8F50A02A33100700ED2809 /* terminal_ssh.dylib in Frameworks */,
+				FF8C83262A37172200B1D7CE /* libfangyi_shell_ffi_static.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +146,7 @@
 		33CC10E42044A3C60003C045 = {
 			isa = PBXGroup;
 			children = (
+				FF8C831B2A3716F100B1D7CE /* fangyi_shell_ffi.xcodeproj */,
 				FF8F50A12A33178600ED2809 /* bridge_generated.h */,
 				33FAB671232836740065AC1E /* Runner */,
 				33CEB47122A05771004F2AC0 /* Flutter */,
@@ -182,7 +190,6 @@
 		33FAB671232836740065AC1E /* Runner */ = {
 			isa = PBXGroup;
 			children = (
-				FF8F50982A330FC400ED2809 /* terminal_ssh.xcodeproj */,
 				33CC10F02044A3C60003C045 /* AppDelegate.swift */,
 				33CC11122044BFA00003C045 /* MainFlutterWindow.swift */,
 				33E51913231747F40026EE4D /* DebugProfile.entitlements */,
@@ -200,10 +207,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FF8F50992A330FC400ED2809 /* Products */ = {
+		FF8C831C2A3716F100B1D7CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FF8F509D2A330FC400ED2809 /* terminal_ssh.dylib */,
+				FF8C83212A3716F100B1D7CE /* fangyi_shell_ffi.dylib */,
+				FF8C83232A3716F100B1D7CE /* libfangyi_shell_ffi_static.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,7 +250,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				FF8F509F2A330FF600ED2809 /* PBXTargetDependency */,
+				FF8C83252A37171400B1D7CE /* PBXTargetDependency */,
 				33CC11202044C79F0003C045 /* PBXTargetDependency */,
 			);
 			name = Runner;
@@ -294,8 +302,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = FF8F50992A330FC400ED2809 /* Products */;
-					ProjectRef = FF8F50982A330FC400ED2809 /* terminal_ssh.xcodeproj */;
+					ProductGroup = FF8C831C2A3716F100B1D7CE /* Products */;
+					ProjectRef = FF8C831B2A3716F100B1D7CE /* fangyi_shell_ffi.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -308,11 +316,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FF8F509D2A330FC400ED2809 /* terminal_ssh.dylib */ = {
+		FF8C83212A3716F100B1D7CE /* fangyi_shell_ffi.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = terminal_ssh.dylib;
-			remoteRef = FF8F509C2A330FC400ED2809 /* PBXContainerItemProxy */;
+			path = fangyi_shell_ffi.dylib;
+			remoteRef = FF8C83202A3716F100B1D7CE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FF8C83232A3716F100B1D7CE /* libfangyi_shell_ffi_static.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfangyi_shell_ffi_static.a;
+			remoteRef = FF8C83222A3716F100B1D7CE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -410,10 +425,10 @@
 			target = 33CC111A2044C6BA0003C045 /* Flutter Assemble */;
 			targetProxy = 33CC111F2044C79F0003C045 /* PBXContainerItemProxy */;
 		};
-		FF8F509F2A330FF600ED2809 /* PBXTargetDependency */ = {
+		FF8C83252A37171400B1D7CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "terminal_ssh-cdylib";
-			targetProxy = FF8F509E2A330FF600ED2809 /* PBXContainerItemProxy */;
+			name = "fangyi_shell_ffi-staticlib";
+			targetProxy = FF8C83242A37171400B1D7CE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

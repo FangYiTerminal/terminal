@@ -15,3 +15,7 @@ a cross-platform ssh or sftp tool based with flutter and rust
     ```shell
     ssh root@localhost -p 50001
     ```
+
+### configuration rust ffi with dart
+
+https://www.6hu.cc/archives/101135.html
