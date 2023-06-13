@@ -19,3 +19,5 @@ a cross-platform ssh or sftp tool based with flutter and rust
 ### configuration rust ffi with dart
 
 https://www.6hu.cc/archives/101135.html
+
+https://wiki.ducafecat.tech/blog/flutter-tips/3-m1-macos-install-cocoapods.html

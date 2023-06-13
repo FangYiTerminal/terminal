@@ -1,3 +1,4 @@
+import 'package:FangYiShell/ffi/rust_ffi.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:FangYiShell/ffi/load.dart';
@@ -8,8 +9,9 @@ class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
 
   void _incrementCounter() async {
-    int value = await NativeModule.api.test();
-    print(value);
+    FangyiShellSdk value = await NativeModule.api.createInstance();
+    int a = await NativeModule.api.test(sdk: value);
+    print(a);
   }
 
   @override

@@ -21,14 +21,27 @@ use std::sync::Arc;
 
 // Section: wire functions
 
-fn wire_test_impl(port_: MessagePort) {
+fn wire_create_instance_impl(port_: MessagePort) {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap(
+        WrapInfo {
+            debug_name: "create_instance",
+            port: Some(port_),
+            mode: FfiCallMode::Normal,
+        },
+        move || move |task_callback| Ok(create_instance()),
+    )
+}
+fn wire_test_impl(port_: MessagePort, sdk: impl Wire2Api<FangyiShellSdk> + UnwindSafe) {
     FLUTTER_RUST_BRIDGE_HANDLER.wrap(
         WrapInfo {
             debug_name: "test",
             port: Some(port_),
             mode: FfiCallMode::Normal,
         },
-        move || move |task_callback| Ok(test()),
+        move || {
+            let api_sdk = sdk.wire2api();
+            move |task_callback| Ok(test(api_sdk))
+        },
     )
 }
 // Section: wrapper structs
@@ -53,7 +66,20 @@ where
         (!self.is_null()).then(|| self.wire2api())
     }
 }
+
+impl Wire2Api<i32> for i32 {
+    fn wire2api(self) -> i32 {
+        self
+    }
+}
 // Section: impl IntoDart
+
+impl support::IntoDart for FangyiShellSdk {
+    fn into_dart(self) -> support::DartAbi {
+        vec![self.sqlite_instance.into_dart()].into_dart()
+    }
+}
+impl support::IntoDartExceptPrimitive for FangyiShellSdk {}
 
 // Section: executor
 
